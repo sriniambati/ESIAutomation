@@ -1,14 +1,8 @@
-<<<<<<< HEAD
 ﻿using CSCAutomateLib;
 using Azure.Storage.Queues.Models;
 using CSCAutomateUnitTest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.RegularExpressions;
-=======
-﻿using Azure.Storage.Queues.Models;
-using CSCAutomateUnitTest;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
->>>>>>> Added Files related Azure Function
 using System.Threading.Tasks;
 
 namespace CSCAutomateLib.Tests
@@ -27,7 +21,6 @@ namespace CSCAutomateLib.Tests
 
             Assert.IsNotNull(sr);
         }
-<<<<<<< HEAD
 
         [TestMethod()]
         public void TestMessageAyncTest()
@@ -58,8 +51,5 @@ namespace CSCAutomateLib.Tests
         #endregion
 
 
-=======
-        #endregion
->>>>>>> Added Files related Azure Function
     }
 }

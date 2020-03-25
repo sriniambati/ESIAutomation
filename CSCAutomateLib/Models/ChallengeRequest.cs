@@ -4,6 +4,15 @@ using System.Text;
 
 namespace CSCAutomateLib
 {
+<<<<<<< HEAD
+=======
+    public class AdditionalInput
+    {
+        public bool AutoRecurring { get; set; }
+        public bool RequestedVouchers { get; set; }
+    }
+
+>>>>>>> Added Files related Azure Function
     public class LearningPath
     {
         public string CollectionName { get; set; }
@@ -17,7 +26,11 @@ namespace CSCAutomateLib
 
     public class ChallengeRequest
     {
+<<<<<<< HEAD
         public string SponsorEmail { get; set; }
+=======
+        public IList<AdditionalInput> AdditionalInputs { get; set; }
+>>>>>>> Added Files related Azure Function
         public IList<ContestRequest> BaseInputs { get; set; }
         public IList<LearningPath> LearningPaths { get; set; }
     }

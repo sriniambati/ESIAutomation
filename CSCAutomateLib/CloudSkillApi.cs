@@ -28,7 +28,10 @@ namespace CSCAutomateLib
         private const string Https = "https";
         private const string DateFormat = "MMMDDYYYY";
         private const string ApiKeyName = "Ocp-Apim-Subscription-Key";
+<<<<<<< HEAD
         private const string ContestNameTag = "| Exam";
+=======
+>>>>>>> Added Files related Azure Function
         #endregion
 
         #region "Constructor"
@@ -54,6 +57,7 @@ namespace CSCAutomateLib
         /// <returns></returns>
         public async Task<List<ContestResponse>> CreateChallengesAsyc(BlobApi blobApi, string challengeRequestJson)
         {
+<<<<<<< HEAD
             ChallengeRequest challengeRequest = ContestFactory.CreateChallengeRequest(challengeRequestJson);
             List<ContestResponse> contestReponseList = await CreateCollectionChallengesAsync(
                 challengeRequest.LearningPaths,
@@ -62,6 +66,16 @@ namespace CSCAutomateLib
             string json = JsonConvert.SerializeObject(contestReponseList);
             string fileName = $"{ContestPrefix}{DateTime.Now.ToString(DateFormat)}_{Guid.NewGuid().ToString()}";
             await blobApi?.UploadToBlobAsync(json, fileName);
+=======
+            List<ChallengeRequest> challengeRequest = ContestFactory.CreateChallengeRequest(challengeRequestJson);
+            List<ContestResponse> contestReponseList = await CreateCollectionChallengesAsync(
+                challengeRequest[0].LearningPaths,
+                challengeRequest[0].BaseInputs[0]);
+
+            string json = JsonConvert.SerializeObject(contestReponseList);
+            string fileName = $"{ContestPrefix}{DateTime.Now.ToString(DateFormat)}_{Guid.NewGuid().ToString()}";
+            await blobApi.UploadToBlobAsync(json, fileName);
+>>>>>>> Added Files related Azure Function
 
             return contestReponseList;
         }
@@ -121,7 +135,10 @@ namespace CSCAutomateLib
         public async Task<List<ContestResponse>> CreateCollectionChallengesAsync(IList<LearningPath> learningPaths, ContestRequest request)
         {
             var results = new List<ContestResponse>();
+<<<<<<< HEAD
             request.Name = $"{request.Name} {ContestNameTag}";
+=======
+>>>>>>> Added Files related Azure Function
 
             foreach (LearningPath lp in learningPaths)
             {
